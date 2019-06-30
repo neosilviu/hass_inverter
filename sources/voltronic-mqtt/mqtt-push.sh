@@ -2,13 +2,13 @@
 
 pushMQTTData () {
 
-    MQTT_SERVER=`cat /opt/skymax/bin/mqtt.json | jq '.server' -r`
-    MQTT_PORT=`cat /opt/skymax/bin/mqtt.json | jq '.port' -r`
-	MQTT_USER=`cat /opt/skymax/bin/mqtt.json | jq '.user' -r`
-	MQTT_PASS=`cat /opt/skymax/bin/mqtt.json | jq '.pass' -r`
-	MQTT_CLIENT_ID=`cat /opt/skymax/bin/mqtt.json | jq '.client' -r`
-    MQTT_TOPIC=`cat /opt/skymax/bin/mqtt.json | jq '.topic' -r`
-    MQTT_DEVICENAME=`cat /opt/skymax/bin/mqtt.json | jq '.devicename' -r`
+    MQTT_SERVER=`cat /etc/skymax/mqtt.json | jq '.server' -r`
+    MQTT_PORT=`cat /etc/skymax/mqtt.json | jq '.port' -r`
+	MQTT_USER=`cat /etc/skymax/mqtt.json | jq '.user' -r`
+	MQTT_PASS=`cat /etc/skymax/mqtt.json | jq '.pass' -r`
+	MQTT_CLIENT_ID=`cat /etc/skymax/mqtt.json | jq '.client' -r`
+    MQTT_TOPIC=`cat /etc/skymax/mqtt.json | jq '.topic' -r`
+    MQTT_DEVICENAME=`cat /etc/skymax/mqtt.json | jq '.devicename' -r`
 
 
     mosquitto_pub \
@@ -21,7 +21,7 @@ pushMQTTData () {
         -m "$2"
 }
 
-INVERTER_DATA=`timeout 10 /opt/skymax/bin/skymax`
+INVERTER_DATA=`timeout 10 /opt/voltronic-cli/bin/skymax`
 
 #####################################################################################
 
