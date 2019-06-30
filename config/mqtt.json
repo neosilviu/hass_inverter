@@ -1,0 +1,9 @@
+{
+    "server": "192.168.2.3",
+    "port": "1883",
+    "user": "silviu",
+    "pass": "K[_4*^4Sq'8)&:wj",
+    "client": "invertor",
+    "topic": "homeassistant",
+    "devicename": "voltronic"
+}
